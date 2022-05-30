@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "anaglyph-fabric",
+  "version": "${version}",
+  "name": "Anaglyph Fabric",
+  "description": "Add 3d anaglyph back",
+  "authors": [
+    "vlad2305m"
+  ],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/anaglyph-fabric/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "vlad2305m.anaglyphfabric.client.AnaglyphFabricClient"
+      ],
+
+    "modmenu": [
+      "vlad2305m.anaglyphfabric.client.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "anaglyph-fabric.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "1.18.*"
+  },
+  "accessWidener" : "anaglyph-fabric.accesswidener"
+}

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "vlad2305m.anaglyphfabric.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "Anaglyph",
+    "Anaglyph$CrosshairAnaglyph"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -5,7 +5,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.math.Matrix4f;
+import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -18,14 +18,12 @@ import static vlad2305m.anaglyphfabric.client.Util.renderTwice;
 @Mixin(GameRenderer.class)
 public abstract class Anaglyph {
 
-    @Redirect(method = "Lnet/minecraft/client/render/GameRenderer;renderWorld(FJLnet/minecraft/client/util/math/MatrixStack;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;render(Lnet/minecraft/client/util/math/MatrixStack;FJZLnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/GameRenderer;Lnet/minecraft/client/render/LightmapTextureManager;Lnet/minecraft/util/math/Matrix4f;)V"))
+    @Redirect(method = "renderWorld(FJLnet/minecraft/client/util/math/MatrixStack;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;render(Lnet/minecraft/client/util/math/MatrixStack;FJZLnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/GameRenderer;Lnet/minecraft/client/render/LightmapTextureManager;Lorg/joml/Matrix4f;)V"))
     public void renderWorldTwice(WorldRenderer instance, MatrixStack matrices, float tickDelta, long limitTime, boolean renderBlockOutline, Camera camera, GameRenderer gameRenderer, LightmapTextureManager lightmapTextureManager, Matrix4f positionMatrix) {
         double d = getFov(camera, tickDelta, true);
-        renderTwice(matrices, ()->{
-            instance.render(matrices, tickDelta, limitTime, renderBlockOutline, camera, gameRenderer, lightmapTextureManager, positionMatrix);
-        }, (f)->camera.moveBy(0,0,f));
-
-        instance.setupFrustum(matrices, camera.getPos(), getBasicProjectionMatrix(Math.max(d, client.options.fov)));
+        renderTwice(matrices, ()-> instance.render(matrices, tickDelta, limitTime, renderBlockOutline, camera, gameRenderer, lightmapTextureManager, positionMatrix),
+                (f)->camera.moveBy(0,0,f), camera.getRotation());
+        instance.setupFrustum(matrices, camera.getPos(), getBasicProjectionMatrix(Math.max(d, client.options.getFov().getValue())));
 
     }
 
@@ -57,5 +55,5 @@ public abstract class Anaglyph {
 
     @Shadow public Matrix4f getBasicProjectionMatrix(double max) {return null;}
     @Shadow private double getFov(Camera camera, float tickDelta, boolean b) {return 0;}
-    @Shadow @Final private MinecraftClient client;
+    @Shadow @Final MinecraftClient client;
 }

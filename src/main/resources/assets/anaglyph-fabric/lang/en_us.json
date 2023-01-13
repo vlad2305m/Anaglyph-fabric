@@ -1,8 +1,10 @@
 {
   "text.autoconfig.anaglyph-fabric.title": "Config (§bAnaglyph§r)",
   "text.autoconfig.anaglyph-fabric.option.anaglyphMode": "Anaglyph on",
+  "text.autoconfig.anaglyph-fabric.option.colorlessFog": "Grayscale all fog+",
   "text.autoconfig.anaglyph-fabric.option.eyeDistance": "Eye Separation (m)",
-  "text.autoconfig.anaglyph-fabric.option.angle": "Eye angle (towards nose)",
+  "text.autoconfig.anaglyph-fabric.option.enableAngle": "Enable angle adjustment",
+  "text.autoconfig.anaglyph-fabric.option.angle": "Eye angle (° towards nose)",
   "text.autoconfig.anaglyph-fabric.option.rightR": "Right lens is red",
   "text.autoconfig.anaglyph-fabric.option.rightG": "Right lens is green",
   "text.autoconfig.anaglyph-fabric.option.rightB": "Right lens is blue",

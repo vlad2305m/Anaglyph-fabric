@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "Anaglyph",
-    "Anaglyph$CrosshairAnaglyph"
+    "Anaglyph$CrosshairAnaglyph",
+    "GrayscaleFog"
   ],
   "client": [
   ],

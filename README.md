@@ -3,7 +3,7 @@ https://www.curseforge.com/minecraft/mc-mods/anaglyph-fabric
 
 3d for Minecraft
 
-Requires [ClothConfigAPI](https://www.curseforge.com/minecraft/mc-mods/cloth-config); [ModMenu](https://www.curseforge.com/minecraft/mc-mods/modmenu)
+Requires [ClothConfigAPI](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files); [ModMenu](https://www.curseforge.com/minecraft/mc-mods/modmenu/files)
 
 Red-cyan by default
 

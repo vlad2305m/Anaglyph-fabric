@@ -1,5 +1,5 @@
 # Anaglyph-fabric
-https://www.curseforge.com/minecraft/mc-mods/anaglyph-fabric
+https://www.curseforge.com/minecraft/mc-mods/anaglyph-fabric/files
 
 3d for Minecraft
 

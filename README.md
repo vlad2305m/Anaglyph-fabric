@@ -3,18 +3,16 @@ https://www.curseforge.com/minecraft/mc-mods/anaglyph-fabric/files
 
 3d for Minecraft
 
-> **Warning**
-> 
-> Requires [ClothConfigAPI](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files); [ModMenu](https://www.curseforge.com/minecraft/mc-mods/modmenu/files)
+$\color{red}{\text{Requires}}$ [ClothConfigAPI](https://www.curseforge.com/minecraft/mc-mods/cloth-config/files); [ModMenu](https://www.curseforge.com/minecraft/mc-mods/modmenu/files)
 
-Red-cyan by default
+$\colorbox{#f88}{Red}\text{-}\colorbox{#0ff}{cyan}$ by default
 
 #### Options (in ModMenu):
 
 
 - Eye separation (Can be measured against a mirror by closing one eye and aligning openEye-0-openEye, then changing the eye and reading the value);
 - Eye angle (set to $2⋅tan^{-1}\left(\frac{\text{distance between eyes}}{2⋅\text{distance to monitor}}\right)$ for best experience)
-- Glasses RGB (FTT for red-cyan, TTF for blue-yellow, etc)
+- Glasses RGB ( $\text{F}\colorbox{#0ff}{TT}$ for red-cyan, $\colorbox{#ff0}{TT}\text{F}$ for blue-yellow, etc)
 - Crosshair rendering (as it is very distracting to aim with two of them)
 - Grayscale fog (overworld one is blue, nether is red - both very bad for glasses) 
 

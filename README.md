@@ -20,3 +20,5 @@ $\colorbox{#f88}{Red}\text{-}\colorbox{#0ff}{cyan}$ by default
 Nether has a very bad color scheme, so play a few hours in overworld first.
 Recommended with something like https://www.curseforge.com/minecraft/texture-packs/pack-and-white to get used to the unusual eye position in Nether. You really should play around 2 days with it
 Don't look at diamonds/lava until you feel confident with colors
+
+<a href='https://ko-fi.com/M4M4I866V' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>

@@ -2,6 +2,7 @@ package vlad2305m.anaglyphfabric.mixin;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
@@ -43,14 +44,14 @@ public abstract class Anaglyph {
 
     @Mixin(InGameHud.class)
     public static class CrosshairAnaglyph {
-        @Redirect(method = "Lnet/minecraft/client/gui/hud/InGameHud;render(Lnet/minecraft/client/util/math/MatrixStack;F)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/InGameHud;renderCrosshair(Lnet/minecraft/client/util/math/MatrixStack;)V"))
-        public void renderCrosshairTwice(InGameHud instance, MatrixStack matrices){
+        @Redirect(method = "Lnet/minecraft/client/gui/hud/InGameHud;render(Lnet/minecraft/client/gui/DrawContext;F)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/InGameHud;renderCrosshair(Lnet/minecraft/client/gui/DrawContext;)V"))
+        public void renderCrosshairTwice(InGameHud instance, DrawContext matrices){
             if (AutoConfig.getConfigHolder(AnaglyphConfig.class).getConfig().renderCrosshair) renderCrosshair(matrices);
             //renderTwice(matrices, ()->{
             //    renderCrosshair(matrices);
             //}, (f)->matrices.translate(0,0,-f));
         }
-        @Shadow private void renderCrosshair(MatrixStack matrices) {}
+        @Shadow private void renderCrosshair(DrawContext matrices) {}
     }
 
     @Shadow public Matrix4f getBasicProjectionMatrix(double max) {return null;}
